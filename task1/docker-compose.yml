@@ -1,0 +1,12 @@
+version: "3"
+services:
+  rabbitmq:
+    image: rabbitmq:latest
+    ports:
+      - "5673:5672"
+  producer:
+    build: .
+    command: python producer.py
+  consumer:
+    build: .
+    command: python consumer.py
